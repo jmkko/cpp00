@@ -23,7 +23,7 @@ int PhoneBook::get_index(){
 }
 
 void PhoneBook::add(){
-    if(index < 2)
+    if(index < 8)
     {
         std::string mystr;
         Contact new_contact;
