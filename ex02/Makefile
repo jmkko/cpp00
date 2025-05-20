@@ -5,7 +5,7 @@ INCLUDES = -I.
 
 OBJS_DIR = obj
 
-SRCS = main.cpp Account.cpp
+SRCS = tests.cpp Account.cpp
 
 OBJS = $(SRCS:%.cpp=$(OBJS_DIR)/%.o)
 
