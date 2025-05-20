@@ -14,7 +14,7 @@ public:
     void search();
     void exit();
     void print_col(std::string str);
-    bool is_index(std::string str);
+    bool is_num(std::string str);
 };
 
 #endif

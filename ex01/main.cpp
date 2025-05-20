@@ -17,7 +17,7 @@ int main(int ac, char **av)
             my_phonebook.add();
             nb_contact = my_phonebook.get_index();
         }
-        if (str == "SEARCH")
+        else if (str == "SEARCH")
             my_phonebook.search();
-    }while (str != "EXIT" || nb_contact > 2);
+    }while (str != "EXIT");
 }

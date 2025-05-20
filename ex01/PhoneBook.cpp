@@ -65,6 +65,11 @@ void PhoneBook::search(){
     std::string         str_index;
     int                 int_index;
 
+    if (index == 0)
+    {
+        std::cout << "There is no contact in the phonebook" << std::endl;
+        return ;
+    }
     std::cout << "     index|first name| last name|  nickname|" << std::endl;
     for (int i = 0; i < index; ++i)
     {
@@ -81,7 +86,7 @@ void PhoneBook::search(){
     std::cout << "Waiting index : ";
     std::getline(std::cin, str_index);
     std::istringstream(str_index) >> int_index;
-    if (is_index(str_index) && int_index >= 0 && int_index < 10)
+    if (is_num(str_index) && int_index >= 0 && int_index < index)
     {
         std::cout << contact_list[int_index].get_firstname() << std::endl;
         std::cout << contact_list[int_index].get_lastname() << std::endl;
@@ -93,10 +98,10 @@ void PhoneBook::search(){
     }
 }
 
-bool PhoneBook::is_index(std::string str){
+bool PhoneBook::is_num(std::string str){
     bool is_number = true;
     for (std::string::iterator it = str.begin(); it != str.end(); ++it){
-        if (!isdigit(str[*it])){
+        if (!isdigit(*it)){
             is_number = false;
             break;
         }
