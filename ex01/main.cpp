@@ -1,5 +1,6 @@
 #include "PhoneBook.hpp"
 #include <iostream>
+#include <limits>
 
 int main(int ac, char **av)
 {
@@ -11,11 +12,13 @@ int main(int ac, char **av)
 
     do{
         std::cout << "Waiting instruction [ADD] [SEARCH] [EXIT]:";
-        std::getline(std::cin, str);
+        //std::getline(std::cin, str);
+        if (!std::getline(std::cin, str))
+            break;// reset le flag d'erreur EOF
         if (str == "ADD")
         {
             my_phonebook.add();
-            nb_contact = my_phonebook.get_index();
+            nb_contact = my_phonebook.getIndex();
         }
         else if (str == "SEARCH")
             my_phonebook.search();

@@ -4,17 +4,21 @@
 #include "Contact.hpp"
 
 class PhoneBook {
+
+private:
     Contact contact_list[8];
+    int nb_contact;
     int index;
+
+    void print_col(std::string str);
+    void exit();
+    void getData(std::string, std::string&);
 
 public:
     PhoneBook();
-    int get_index();
+    int getIndex();
     void add();
     void search();
-    void exit();
-    void print_col(std::string str);
-    bool is_num(std::string str);
 };
 
 #endif
